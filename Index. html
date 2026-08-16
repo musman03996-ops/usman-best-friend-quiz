@@ -1,1 +1,591 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usman Best Friend Quiz</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#e8fffb,#ffffff);
+    color:#173c3a;
+}
+
+.header{
+    background:#10877d;
+    color:white;
+    padding:22px 15px;
+    text-align:center;
+    font-size:26px;
+    font-weight:bold;
+    border-radius:0 0 25px 25px;
+}
+
+.container{
+    max-width:600px;
+    margin:auto;
+    padding:20px 15px 40px;
+}
+
+.intro{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.intro h1{
+    color:#10877d;
+    margin-bottom:8px;
+}
+
+.intro p{
+    color:#666;
+}
+
+.question-box{
+    background:white;
+    padding:18px;
+    margin-bottom:22px;
+    border-radius:22px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.question-number{
+    color:#10877d;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.question{
+    font-size:19px;
+    font-weight:bold;
+    margin:10px 0 16px;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.option{
+    border:2px solid #d8e9e7;
+    border-radius:16px;
+    overflow:hidden;
+    background:#fff;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    transform:scale(1.02);
+    border-color:#10877d;
+}
+
+.option input{
+    display:none;
+}
+
+.option img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    display:block;
+}
+
+.option-text{
+    padding:12px 8px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.option input:checked + img{
+    outline:4px solid #10877d;
+    outline-offset:-4px;
+}
+
+.option:has(input:checked){
+    border-color:#10877d;
+    background:#e8fffb;
+}
+
+.submit{
+    width:100%;
+    border:0;
+    padding:16px;
+    border-radius:18px;
+    background:#10877d;
+    color:white;
+    font-size:19px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.submit:hover{
+    background:#096e66;
+}
+
+#result{
+    display:none;
+    margin-top:25px;
+    background:white;
+    padding:25px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.score{
+    font-size:40px;
+    font-weight:bold;
+    color:#10877d;
+}
+
+@media(max-width:450px){
+    .options{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .option img{
+        height:105px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    💚 Usman Best Friend Quiz 💚
+</div>
+
+<div class="container">
+
+<div class="intro">
+    <h1>How Well Do You Know Usman?</h1>
+    <p>Answer these questions and find out your score!</p>
+</div>
+
+<form id="quizForm">
+
+<!-- QUESTION 1 -->
+<div class="question-box">
+<div class="question-number">QUESTION 1 / 10</div>
+<div class="question">What dress color does Usman like the most?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q1" value="1">
+<img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🖤 Black</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="0">
+<img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🤍 White</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="0">
+<img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🤎 Brown</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="0">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">💙 Blue</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 2 -->
+<div class="question-box">
+<div class="question-number">QUESTION 2 / 10</div>
+<div class="question">What does Usman like to do in his free time?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q2" value="1">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">📚 Reading Books</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="0">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🎮 Gaming</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="0">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">💻 Coding</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="0">
+<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🎵 Music</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 3 -->
+<div class="question-box">
+<div class="question-number">QUESTION 3 / 10</div>
+<div class="question">What does Usman like to eat the most?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q3" value="1">
+<img src="https://images.unsplash.com/photo-1575377427642-087cf684f29d?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🍫 Chocolate</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="0">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🍕 Pizza</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="0">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🍔 Burger</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="0">
+<img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🍝 Pasta</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 4 -->
+<div class="question-box">
+<div class="question-number">QUESTION 4 / 10</div>
+<div class="question">Which season does Usman prefer?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q4" value="1">
+<img src="https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">❄️ Winter</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="0">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">☀️ Summer</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="0">
+<img src="https://images.unsplash.com/photo-1504788363733-507549153474?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🍂 Autumn</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="0">
+<img src="https://images.unsplash.com/photo-1484264121943-6c4f8e8c8c5f?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🌸 Spring</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 5 -->
+<div class="question-box">
+<div class="question-number">QUESTION 5 / 10</div>
+<div class="question">What kind of person is Usman?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q5" value="1">
+<img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">❤️ Emotional & Caring</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="0">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">😎 Carefree</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="0">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">😐 Serious</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="0">
+<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">😂 Funny</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 6 -->
+<div class="question-box">
+<div class="question-number">QUESTION 6 / 10</div>
+<div class="question">What does Usman expect from his best friend?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q6" value="1">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🤝 Loyalty & Honesty</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="0">
+<img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">💰 Money</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="0">
+<img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🎉 Fun Only</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="0">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🏆 Competition</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 7 -->
+<div class="question-box">
+<div class="question-number">QUESTION 7 / 10</div>
+<div class="question">When Usman is angry or hurt, what does he prefer?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q7" value="1">
+<img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">❤️ Talk to his favourite person</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="0">
+<img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🤐 Stay Silent</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="0">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🚶 Go Somewhere Alone</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="0">
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🎵 Listen to Music</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 8 -->
+<div class="question-box">
+<div class="question-number">QUESTION 8 / 10</div>
+<div class="question">What matters most to Usman in a friendship?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q8" value="1">
+<img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">💚 Understanding</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="0">
+<img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">📱 Daily Messages</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="0">
+<img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🎁 Gifts</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="0">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">👥 Popularity</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 9 -->
+<div class="question-box">
+<div class="question-number">QUESTION 9 / 10</div>
+<div class="question">What kind of memories does Usman value most?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q9" value="1">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">📸 Memories with loved ones</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="0">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">✈️ Travelling</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="0">
+<img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🏆 Achievements</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="0">
+<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🎉 Parties</div>
+</label>
+
+</div>
+</div>
+
+
+<!-- QUESTION 10 -->
+<div class="question-box">
+<div class="question-number">QUESTION 10 / 10</div>
+<div class="question">What does Usman value most in a person?</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q10" value="1">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">💖 Loyalty & Genuine Care</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="0">
+<img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">💰 Success</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="0">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">😎 Personality</div>
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="0">
+<img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=500&q=80">
+<div class="option-text">🌟 Popularity</div>
+</label>
+
+</div>
+</div>
+
+<button type="button" class="submit" onclick="calculateScore()">
+    💚 Submit Quiz
+</button>
+
+</form>
+
+<div id="result">
+    <h2>🎉 Quiz Completed!</h2>
+    <div class="score" id="score"></div>
+    <p id="message"></p>
+</div>
+
+</div>
+
+<script>
+
+function calculateScore(){
+
+    let score = 0;
+
+    for(let i=1;i<=10;i++){
+
+        let answer = document.querySelector(
+            'input[name="q'+i+'"]:checked'
+        );
+
+        if(answer){
+            score += Number(answer.value);
+        }
+    }
+
+    document.getElementById("result").style.display="block";
+
+    document.getElementById("score").innerHTML =
+        score + "/10";
+
+    let message="";
+
+    if(score===10){
+        message="😍 Perfect! You know Usman extremely well!";
+    }
+    else if(score>=8){
+        message="💚 Amazing! You really know Usman!";
+    }
+    else if(score>=6){
+        message="😊 Good! You know Usman pretty well!";
+    }
+    else if(score>=4){
+        message="🙂 Not bad! But you need to know Usman better!";
+    }
+    else{
+        message="😂 Looks like you need to spend more time with Usman!";
+    }
+
+    document.getElementById("message").innerHTML=message;
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
